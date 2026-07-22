@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מנהל הוצאות ותקציב</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="tracker-card">
+    <header>
+      <h1>מנהל תקציב 💰</h1>
+    </header>
+
+    <!-- סיכום יתרה -->
+    <div class="balance-container">
+      <span class="balance-title">היתרה שלך</span>
+      <h2 id="totalBalance">₪0.00</h2>
+      
+      <div class="summary-cards">
+        <div class="summary-box income">
+          <span>הכנסות</span>
+          <p id="totalIncome">+₪0.00</p>
+        </div>
+        <div class="summary-box expense">
+          <span>הוצאות</span>
+          <p id="totalExpense">-₪0.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- טופס הוספת עסקה -->
+    <form id="transactionForm" class="form-container">
+      <div class="input-group">
+        <input type="text" id="descInput" placeholder="תיאור (למשל: משכורת, קניות)" required>
+      </div>
+      <div class="input-row">
+        <input type="number" id="amountInput" placeholder="סכום ב-₪" step="0.01" required>
+        <select id="typeSelect">
+          <option value="expense">הוצאה 🔴</option>
+          <option value="income">הכנסה 🟢</option>
+        </select>
+      </div>
+      <button type="submit" class="add-btn">הוסף עסקה</button>
+    </form>
+
+    <!-- היסטוריית תנועות -->
+    <div class="history-container">
+      <h3>היסטוריית תנועות</h3>
+      <ul id="transactionList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

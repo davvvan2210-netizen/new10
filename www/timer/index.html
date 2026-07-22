@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>טיימר פומודורו</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="pomodoro-card">
+    <header>
+      <h1>טיימר פומודורו ⏱️</h1>
+    </header>
+
+    <!-- בחירת מצב -->
+    <div class="modes">
+      <button id="workMode" class="mode-btn active">🎯 ריכוז (25 דק')</button>
+      <button id="breakMode" class="mode-btn">☕ הפסקה (5 דק')</button>
+    </div>
+
+    <!-- תצוגת הזמן -->
+    <div class="timer-display" id="timer">25:00</div>
+
+    <!-- כפתורי שליטה -->
+    <div class="controls">
+      <button id="startPauseBtn" class="btn primary">התחל</button>
+      <button id="resetBtn" class="btn secondary">איפוס</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

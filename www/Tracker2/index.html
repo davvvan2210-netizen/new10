@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מעקב יעד חיסכון</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="savings-card">
+    
+    <!-- כותרת ראשית -->
+    <header class="app-header">
+      <h1>מעקב יעד חיסכון 🎯</h1>
+    </header>
+
+    <!-- 1. אזור היעד וההתקדמות -->
+    <section class="goal-box">
+      
+      <div class="goal-header">
+        <span id="goalTitleDisplay" class="goal-title">---</span>
+        <button id="editGoalBtn" class="link-btn">✏️ ערוך יעד ופירוט</button>
+      </div>
+
+      <h2 id="currentProgress">₪0 / ₪0</h2>
+
+      <div class="progress-track">
+        <div id="progressBar" class="progress-fill"></div>
+      </div>
+
+      <div class="progress-details">
+        <span id="percentText">0% מומש</span>
+        <span id="remainingText">נשאר עוד ₪0</span>
+      </div>
+
+    </section>
+
+    <!-- 2. טופס הוספת הפקדה -->
+    <section class="form-section">
+      <form id="savingsForm">
+        <div class="inputs-group">
+          <input type="text" id="descInput" placeholder="על מה הפקדתי? (למשל: בונוס)" required>
+          <input type="number" id="amountInput" placeholder="סכום ב-₪" min="1" required>
+        </div>
+        <button type="submit" class="btn primary-btn">+ הפקד לחיסכון</button>
+      </form>
+    </section>
+
+    <!-- כפתור איפוס -->
+    <button id="resetSavingsBtn" class="btn danger-btn">איפוס מלא</button>
+
+  </main>
+
+  <!-- 3. חלון קופץ מרובע (פופ-אפ) שכולל גם עריכת יעד וגם את פירוט ההפקדות -->
+  <div id="goalModal" class="modal hidden">
+    <div class="modal-box">
+      
+      <h3>ניהול יעד ופירוט</h3>
+
+      <!-- טופס עדכון יעד -->
+      <div class="modal-inputs">
+        <input type="text" id="goalTitleInput" placeholder="שם היעד" required>
+        <input type="number" id="goalAmountInput" placeholder="סכום היעד ב-₪" min="1" required>
+      </div>
+
+      <!-- רשימת פירוט הפקדות בתוך הפופ-אפ -->
+      <div class="modal-history">
+        <div class="history-title-row">
+          <span>על מה הפקדתי:</span>
+          <span id="historyCount">0 הפקדות</span>
+        </div>
+        <ul id="historyList" class="history-list"></ul>
+      </div>
+
+      <!-- כפתורי פעולה -->
+      <div class="modal-actions">
+        <button id="saveGoalBtn" class="btn primary-btn">שמור</button>
+        <button id="closeModalBtn" class="btn secondary-btn">סגור</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
