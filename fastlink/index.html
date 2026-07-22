@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ה-Dashboard שלי</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- כותרת ושעון -->
+    <header class="card clock-section">
+      <h1 id="greeting">בוקר טוב!</h1>
+      <div id="clock">00:00:00</div>
+      <div id="date"></div>
+    </header>
+
+    <!-- קישורים מהירים -->
+    <section class="card links-section">
+      <h2>קישורים מהירים</h2>
+      <div class="links-grid">
+        <a href="https://google.com" target="_blank" class="link-btn">Google</a>
+        <a href="https://github.com" target="_blank" class="link-btn">GitHub</a>
+        <a href="https://youtube.com" target="_blank" class="link-btn">YouTube</a>
+      </div>
+    </section>
+
+    <!-- רשימת משימות -->
+    <section class="card todo-section">
+      <h2>משימות להיום</h2>
+      <div class="todo-input-wrapper">
+        <input type="text" id="todoInput" placeholder="מה המשימה הבאה?">
+        <button id="addBtn">הוסף</button>
+      </div>
+      <ul id="todoList"></ul>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
