@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ה-Dashboard האישי שלי</title>
+    <!-- קישור יחיד ומסודר לקובץ העיצוב שלנו -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle">🌙 מצב כהה</button>
+
+    <!-- כותרת ראשית ואזור השעון -->
+    <header>
+        <h1>המרחב האישי שלי</h1>
+        <div id="clock-container">
+            <!-- כאן ה-JS ישתול את השעה בהמשך -->
+            <p id="digital-clock">00:00:00</p>
+            <p id="date-display">טוען תאריך...</p>
+        </div>
+
+        
+    </header>
+
+    <!-- האזור המרכזי של הדשבורד -->
+    <main class="dashboard-grid">
+        
+      <!-- כרטיסיית מזג אוויר -->
+<section class="card" id="weather-card">
+    <h2>מזג אוויר</h2>
+    
+    <!-- תיבת בחירת עיר -->
+    <select id="city-select" style="width: 100%; padding: 8px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #ccc; font-family: inherit;">
+        <option value="tel-aviv">תל אביב</option>
+        <option value="jerusalem">ירושלים</option>
+        <option value="haifa">חיפה</option>
+        <option value="eilat">אילת</option>
+    </select>
+
+    <div id="weather-info">
+        <p>טוען נתונים...</p>
+    </div>
+</section>
+
+        <!-- כרטיסיית רשימת משימות (Todo List) -->
+        <section class="card" id="todo-card">
+            <h2>המשימות שלי</h2>
+            
+            <!-- טופס להוספת משימה חדשה -->
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="מה יש לנו לעשות היום?" required>
+                <button type="submit">הוסף</button>
+            </form>
+
+            <!-- הרשימה עצמה -->
+         <ul id="todo-list">
+    <!-- להשאיר ריק לגמרי! ה-JS ימלא את זה -->
+</ul>
+        </section>
+
+        <!-- כרטיסיית קישורים מהירים -->
+        <section class="card" id="links-card">
+            <h2>קישורים מהירים</h2>
+            <nav class="quick-links">
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://google.com" target="_blank">Google</a>
+                <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+            </nav>
+        </section>
+
+    </main>
+
+    <!-- כותרת תחתונה -->
+    <footer>
+        <p>נבנה באהבה כחלק מתוכנית פיתוח Full Stack 🚀</p>
+    </footer>
+
+    <!-- קישור לקובץ ה-JS שלנו שירוץ בסוף הדף -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
