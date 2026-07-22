@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>אפליקציית משימות 📝</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="app-container">
+  
+    <h1>רשימת המשימות שלי 📝 <button id="themeToggleBtn" class="theme-btn">🌙</button></h1>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="מה המשימה הבאה שלך?">
+      <button id="addBtn">הוסף משימה</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <!-- סרגל כלים תחתון חדש -->
+    <div class="footer-toolbar">
+      <span id="taskCount">0 משימות נותרו</span>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">הכל</button>
+        <button class="filter-btn" data-filter="active">פעילות</button>
+        <button class="filter-btn" data-filter="completed">הושלמו</button>
+      </div>
+
+      <button id="clearCompletedBtn" class="secondary-btn">נקה הושלמו</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

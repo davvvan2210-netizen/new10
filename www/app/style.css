@@ -1,0 +1,303 @@
+/* --- אתחול והגדרות כלליות --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* גופן עברי מודרני */
+}
+
+body {
+  background-color: #f0f4f8; /* צבע רקע עדין וניטרלי */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- קונטיינר האפליקציה הראשי --- */
+.app-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 480px; /* רוחב נוח */
+  padding: 30px;
+  border-radius: 16px; /* פינות מעוגלות */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* צללית רכה */
+  border-top: 5px solid #1e3c72; /* גבול עליון כחול עדין */
+}
+
+/* --- כותרת ראשית --- */
+h1 {
+  font-size: 1.8rem;
+  color: #1e3c72; /* צבע הכחול של הכפתור */
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* --- אזור הקלט (שדה קלט וכפתור) --- */
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px; /* סגנון קפסולה */
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+input[type="text"]:focus {
+  border-color: #2a5298; /* שינוי גבול בפוקוס */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1); /* הילה בפוקוס */
+}
+
+/* --- עיצוב משודרג לכפתור הוספת משימה (שחזור ושיפור) --- */
+#addBtn {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.25);
+  transition: all 0.3s ease;
+  outline: none;
+  white-space: nowrap; /* מניעת ירידת שורה בטקסט */
+}
+
+#addBtn:hover {
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 60, 114, 0.35);
+}
+
+#addBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(30, 60, 114, 0.2);
+}
+
+#addBtn span {
+  font-size: 1.2rem; /* גודל הפלוס */
+}
+
+/* --- רשימת המשימות --- */
+ul {
+  list-style: none;
+}
+
+/* --- משימה בודדת --- */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdfdfd;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border-right: 5px solid #2a5298; /* גבול צדדי כחול לסטטוס פתוח */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+/* אפקט ריחוף על משימה */
+li:hover {
+  background-color: #f9f9f9;
+  transform: translateX(-3px); /* תזוזה קלה שמאלה */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- טקסט המשימה --- */
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer; /* לחיץ לשינוי סטטוס */
+  transition: color 0.3s ease;
+}
+
+/* --- משימה שהושלמה --- */
+li.completed {
+  opacity: 0.6; /* דהייה */
+  border-right-color: #2ecc71; /* שינוי גבול לירוק */
+  background-color: #fcfcfc;
+}
+
+li.completed .task-text {
+  text-decoration: line-through; /* קו חוצה */
+  color: #888;
+}
+
+/* --- כפתור מחיקת משימה --- */
+.delete-btn {
+  background: transparent;
+  color: #e74c3c; /* אדום */
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: rgba(231, 76, 60, 0.1); /* רקע אדום עדין ב-hover */
+  color: #c0392b;
+}
+
+/* --- סרגל כלים תחתון --- */
+.footer-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea; /* קו מפריד */
+  font-size: 0.85rem;
+  color: #666;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --- מונה משימות --- */
+#taskCount {
+  font-weight: 500;
+  color: #555;
+}
+
+/* --- כפתורי מסננים --- */
+.filter-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-btn {
+  background: #f0f0f0;
+  color: #555;
+  border: 1px solid #e0e0e0;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 20px; /* סגנון קפסולה קטנה */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: #e8e8e8;
+  color: #333;
+}
+
+/* מסנן פעיל (Active) - משתמש ב-gradient של הכפתור */
+.filter-btn.active {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 6px rgba(30, 60, 114, 0.2);
+}
+
+/* --- כפתור ניקוי הושלמו --- */
+#clearCompletedBtn {
+  background: transparent;
+  color: #e74c3c; /* אדום עדין */
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+#clearCompletedBtn:hover {
+  background: rgba(231, 76, 60, 0.08);
+  color: #c0392b;
+}
+
+/* --- עיצוב כפתור מצב לילה --- */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header-container h1 {
+  margin-bottom: 0;
+}
+
+.theme-btn {
+  background: #f0f0f0;
+  border: none;
+  font-size: 1.3rem;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+/* --- הגדרות מצב לילה (Dark Mode) --- */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .app-container {
+  background-color: #1e1e1e;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-top-color: #4a90e2;
+}
+
+body.dark-mode h1 {
+  color: #90caf9;
+}
+
+body.dark-mode input[type="text"] {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border-color: #444;
+}
+
+body.dark-mode input[type="text"]:focus {
+  border-color: #4a90e2;
+}
+
+body.dark-mode li {
+  background-color: #2b2b2b;
+  color: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .task-text {
+  color: #e0e0e0; 
+}
+
+body.dark-mode .filter-btn {
+  background: #2d2d2d;
+  color: #aaa;
+  border-color: #444;
+}
+
+body.dark-mode .theme-btn {
+  background: #333;
+}
